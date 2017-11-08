@@ -1,0 +1,11 @@
+[Unit]
+Description=Configure kernel IR support, load keymaps
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/ir-keytable -c -w /etc/rc_keymaps/dnt_rc11 -p nec
+
+[Install]
+WantedBy=multi-user.target
+
+

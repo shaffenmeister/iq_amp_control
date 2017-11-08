@@ -1,0 +1,8 @@
+#!/bin/sh
+systemctl enable local.ir-keytable.service
+systemctl enable local.ir-event.service
+systemctl daemon-reload
+systemctl start local.ir-keytable.service
+systemctl start local.ir-event.service
+
+

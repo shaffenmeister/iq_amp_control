@@ -1,0 +1,13 @@
+[Unit]
+Description=IR event tool to control mpd
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/home/pi/dev/ir_event
+Restart=always
+User=pi
+Group=pi
+
+[Install]
+WantedBy=multi-user.target

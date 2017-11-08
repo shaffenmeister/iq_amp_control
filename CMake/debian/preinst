@@ -1,0 +1,7 @@
+#!/bin/sh
+systemctl stop local.ir-event.service
+systemctl disable local.ir-event.service
+systemctl stop local.ir-keytable.service
+systemctl disable local.ir-keytable.service
+
+
