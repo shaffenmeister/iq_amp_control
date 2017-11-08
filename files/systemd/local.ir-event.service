@@ -4,7 +4,7 @@ After=network.target
 
 [Service]
 Type=simple
-ExecStart=/home/pi/dev/ir_event
+ExecStart=/usr/local/bin/ir_event
 Restart=always
 User=pi
 Group=pi

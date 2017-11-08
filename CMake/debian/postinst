@@ -1,8 +1,10 @@
 #!/bin/sh
 systemctl enable local.ir-keytable.service
 systemctl enable local.ir-event.service
+systemctl enable local.mechanical-controls.service
 systemctl daemon-reload
 systemctl start local.ir-keytable.service
 systemctl start local.ir-event.service
+systemctl start local.mechanical-controls.service
 
 

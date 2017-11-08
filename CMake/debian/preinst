@@ -3,5 +3,7 @@ systemctl stop local.ir-event.service
 systemctl disable local.ir-event.service
 systemctl stop local.ir-keytable.service
 systemctl disable local.ir-keytable.service
+systemctl stop local.mechanical-controls.service
+systemctl disable local.mechanical-controls.service
 
 
