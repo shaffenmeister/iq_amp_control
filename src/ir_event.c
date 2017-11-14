@@ -89,6 +89,28 @@ get_status(struct mpd_connection *conn)
 	return ret;
 }
 
+bool
+set_mute_state(struct mpd_connection *conn,bool mute)
+{
+	static int lastVolume = -1;
+	int volume = -1;
+	struct mpd_status *status;
+	
+	if(mute)
+	{
+		status = get_status(conn);
+		lastVolume = mpd_status_get_volume(status);
+		mpd_run_set_volume(conn,0);
+	}
+	else
+	{
+		if(lastVolume >= 0 && lastVolume <= 100)
+		{
+			mpd_run_set_volume(conn,lastVolume);
+		}
+	}
+}
+
 /* mpd keepalive thread: set volume every five seconds */
 void* monitor(void *arg)
 {
