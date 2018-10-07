@@ -53,7 +53,7 @@ static int
 handle_error(struct mpd_connection *c)
 {
 	int err = mpd_connection_get_error(c);
-	
+
 	assert(err != MPD_ERROR_SUCCESS);
 
 	log_message(DEBUG, "%i --> %s\n", mpd_connection_get_error_message(c));
@@ -68,7 +68,7 @@ run_play_pos(struct mpd_connection *c, int pos)
 		if(mpd_connection_get_error(c) != MPD_ERROR_SERVER)
 			return handle_error(c);
 	}
-	
+
 	return true;
 }
 
@@ -95,7 +95,7 @@ set_mute_state(struct mpd_connection *conn,bool mute)
 	static int lastVolume = -1;
 	int volume = -1;
 	struct mpd_status *status;
-	
+
 	if(mute)
 	{
 		status = get_status(conn);
@@ -146,9 +146,9 @@ int main()
 /* Initialize and set thread detached attribute */
 pthread_attr_init(&attr);
 pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_JOINABLE);
-    
+
 /*
- * Init MPD connection 
+ * Init MPD connection
  */
 conn = mpd_connection_new(NULL, 0, 30000);
 

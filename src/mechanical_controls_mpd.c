@@ -23,7 +23,7 @@
 */
 
 
-#define ENCODER_A 23 // BCM 
+#define ENCODER_A 23 // BCM
 #define ENCODER_B 24 // BCM
 #define PWM 0
 
@@ -76,18 +76,18 @@ int main(int argc, char * argv[])
 	int pos=0;
 	int incr = 0;
 
-		 /*
-		  * Init MPD connection 
-		  */
-		 conn = mpd_connection_new(NULL, 0, 30000);
+	 /*
+	  * Init MPD connection
+	  */
+	 conn = mpd_connection_new(NULL, 0, 30000);
 
-		 if (mpd_connection_get_error(conn) != MPD_ERROR_SUCCESS)
-		   return handle_error(conn);
+	 if (mpd_connection_get_error(conn) != MPD_ERROR_SUCCESS)
+	   return handle_error(conn);
 
 	/*
 	 * Init GPIO access
 	 */
-	
+
 	/* Configure gpio clock to use the PWM source and not the PCM clock */
 	gpioCfgClock(5,PWM,0);
 
@@ -109,7 +109,7 @@ int main(int argc, char * argv[])
 	/* monitor encoder level changes */
 	gpioSetAlertFunc(ENCODER_A, encoderPulse);
 	gpioSetAlertFunc(ENCODER_B, encoderPulse);
-	
+
 	/* regular timer callback to keep connection to mpd alive */
 	gpioSetTimerFuncEx(0,10000,mpd_keepalive,conn);
 
@@ -209,9 +209,9 @@ void buttonEvent(int gpio, int level, uint32_t tick)
 		else
 		// button released
 		{
-			
+
 		}
-		
+
 		last_lvl = level;
 	}
 }

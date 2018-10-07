@@ -2,6 +2,6 @@
 cmake -H. -Bbuild
 cmake --build build --
 cd build
-make package
+make clean package
 cd ..
 
