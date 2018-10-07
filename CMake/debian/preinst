@@ -1,9 +1,9 @@
 #!/bin/sh
-systemctl stop local.ir-event.service
-systemctl disable local.ir-event.service
-systemctl stop local.ir-keytable.service
-systemctl disable local.ir-keytable.service
-systemctl stop local.mechanical-controls.service
-systemctl disable local.mechanical-controls.service
+systemctl stop local.ir-event-mpd.service
+systemctl disable local.ir-event-mpd.service
+systemctl stop local.ir-keytable-mpd.service
+systemctl disable local.ir-keytable-mpd.service
+systemctl stop local.mechanical-controls-mpd.service
+systemctl disable local.mechanical-controls-mpd.service
 
 
